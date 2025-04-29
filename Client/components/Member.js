@@ -7,7 +7,7 @@ export default function Member({route}) {
     const [score , setScore] = useState("");
     const update =  ()=>{
          const updatedscore = parseInt(score);
-         axios.patch(`http://192.168.1.14:8800/members/${id}`,{
+         axios.patch(`http://localhost:8800/members/${id}`,{
             score : updatedscore,
     })
          .then(()=>{
@@ -20,7 +20,7 @@ export default function Member({route}) {
          })
     }
     useEffect(()=>{
-       axios.get(`http://192.168.1.14:8800/members/${id}`)
+       axios.get(`http://localhost:8800/members/${id}`)
        .then((response)=>{
           setData(response.data[0]);
           setScore(String(response.data[0].score));
