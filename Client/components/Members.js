@@ -8,7 +8,7 @@ export default function members({route} ){
     const [data , setData] = useState([]);
     const {committee} = route.params;
     useEffect(()=>{
-        axios.get(`http://192.168.1.14:8800/members/committee/${committee}`)
+        axios.get(`http://localhost:8800/members/committee/${committee}`)
         .then((response)=>{
             setData(response.data);
         })
